@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://dev.azure.com/ni/IT/_git/k8s-env-test
+    repoURL: https://github.com/thebottlerocket/argo-example/
     targetRevision: HEAD
     path: 
   destination:
