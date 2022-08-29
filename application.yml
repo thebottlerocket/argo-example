@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-environments
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://dev.azure.com/ni/IT/_git/k8s-env-test
+    targetRevision: HEAD
+    path: dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: test-env
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHead: true
+      prune: true
