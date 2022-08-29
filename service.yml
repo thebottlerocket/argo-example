@@ -1,0 +1,11 @@
+apiVersion: v1.7
+kind: Service
+metadata:
+  name: test-env-service
+spec:
+  selector:
+    app: test-environments
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
